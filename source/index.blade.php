@@ -19,7 +19,7 @@
                  x-transition:leave="ease-in duration-200"
                  x-transition:leave-start="opacity-75"
                  x-transition:leave-end="opacity-0"
-                 class="flex absolute top-0 right-0 left-0 bottom-0 opacity-75 transition duration-500 ease-in-out  transform transition-all z-20"
+                 class="flex absolute top-0 right-0 left-0 bottom-0 opacity-75 transition duration-500 ease-in-out transform transition-all z-10"
                  :style="tint">
             </div>
 
@@ -49,31 +49,22 @@
                 </a>
             </div>
         </div>
-
-{{--            <div class="flex flex-col">--}}
-{{--                <div x-text="tint"></div>--}}
-{{--                <div x-text="open"></div>--}}
-{{--                <div x-text="next"></div>--}}
-{{--                <div x-text="previous"></div>--}}
-{{--                <div x-text="src"></div>--}}
-{{--                <div x-text="href"></div>--}}
-{{--            </div>--}}
     </div>
     <script>
         function photo_stream_data() {
             return {
                 open: false,
                 photos: {!! $photos->values()->map(function($photo) use($photos){
-                            return (object) [
-                                'id' => (int) $photo->id,
-                                'photo' => '/'.$photo->photo,
-                                'tint' => 'background-color: '.$photo->tint,
-                                'link' => '/photos/'.$photo->filename,
-                                'filename' => $photo->filename,
-                                'next' => $photos->where('filename', '=', $photo->_meta->nextItem)->first()->id ?? null,
-                                'previous' => $photos->where('filename', '=', $photo->_meta->previousItem)->first()->id ?? null,
-                            ];
-                        })->toJson() !!},
+                    return (object) [
+                        'id' => (int) $photo->id,
+                        'photo' => '/'.$photo->photo,
+                        'tint' => 'background-color: '.$photo->tint,
+                        'link' => '/photos/'.$photo->filename,
+                        'filename' => $photo->filename,
+                        'next' => $photos->where('filename', '=', $photo->_meta->nextItem)->first()->id ?? null,
+                        'previous' => $photos->where('filename', '=', $photo->_meta->previousItem)->first()->id ?? null,
+                    ];
+                })->toJson() !!},
 
                 href: '',
                 tint: '',

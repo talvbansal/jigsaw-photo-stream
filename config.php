@@ -8,7 +8,9 @@ return [
     'links' => [
         'twitter' => 'talv',
         'instagram' => 'iwantthewindowseat',
-        'github' => 'talvbansal'
+        'github' => 'talvbansal',
+        'redbubble' => 'talvbansal',
+
     ],
 
     'collections' => [
