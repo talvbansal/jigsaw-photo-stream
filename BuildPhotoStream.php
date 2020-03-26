@@ -18,7 +18,6 @@ class BuildPhotoStream
 
         // Create resized images...
         // Create new photo markdown files...
-
         $filesystem = new Filesystem();
         $files = $filesystem->allFiles('./source/assets/photos/original');
 
@@ -26,7 +25,6 @@ class BuildPhotoStream
             return Str::endsWith($file, '.jpg');
         })->each(function(SplFileInfo $file, $index) use ($jigsaw) {
 
-            if(true){
                 $filename = str_replace('--', '-', strtolower(str_replace('_', '-', $file->getBasename('.' . $file->getExtension()))));
                 $image = imagecreatefromjpeg($file->getRealPath());
 
@@ -49,8 +47,6 @@ class BuildPhotoStream
 
                 // Create markdown file contents...
                 $contents = sprintf('---
-extends: _layouts.photo
-section: content
 id: %s
 photo: "%s"
 thumbnail: "%s"
@@ -62,7 +58,7 @@ width: "%s"
 date: "%s"
 ---
 ',
-                    $index,
+                    ($index +1),
                     $largeFileName,
                     $thumbnailFileName,
                     $tint,
@@ -74,12 +70,11 @@ date: "%s"
                 );
 
                 $jigsaw->writeSourceFile(sprintf('./_photos/%s.md', $filename), $contents);
-            }
         });
 
     }
 
-    private function clearExistingFiles(string $path, string $fileType)
+    private function clearExistingFiles(string $path, string $fileType) : void
     {
         $filesystem = new Filesystem();
         $existingFiles = collect($filesystem->allFiles($path))->filter(function (SplFileInfo $file) use($fileType) {
