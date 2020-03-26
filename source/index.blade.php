@@ -10,7 +10,7 @@
             @include('_partials/photo', ['photo' => $photo])
         @endforeach
 
-        <div x-show="open" class="close z-10 fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center">
+        <div x-show="open" class="close z-10 fixed top-0 bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center">
             <!-- Modal window layer -->
             <div @click.prevent="close()"
                  x-transition:enter="ease-out duration-300"
@@ -36,15 +36,15 @@
                  x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                  class="h-full overflow-hidden shadow-xl transform transition-all duration-1000 ease-in-out z-30"
             >
-                <img class="object-contain w-full h-full px-16" :src="src"/>
+                <img class="object-contain w-full h-full px-2 md:px-16" :src="src"/>
 
                 <a x-show="previous" href="javascript:;" @click.prevent="previousImage(event)"
-                   class="absolute top-0 bottom-0 left-0 z-40 flex content-center items-center justify-center z-20">
+                   class="absolute top-0 bottom-0 left-0 z-40 flex content-center items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48"><g transform="translate(0, 0)"><path fill="#444444" d="M30.382,47.177l3.235-2.354L18.473,24L33.618,3.177l-3.235-2.354l-16,22c-0.51,0.702-0.51,1.651,0,2.354 L30.382,47.177z"></path></g></svg>
                 </a>
 
                 <a x-show="next" href="javascript:;" @click.prevent="nextImage(event)"
-                   class="absolute top-0 bottom-0 right-0 z-40 flex content-center  items-center justify-center z-20">
+                   class="absolute top-0 bottom-0 right-0 z-40 flex content-center  items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48"><g transform="translate(0, 0)"><path fill="#444444" d="M17.618,47.177l-3.235-2.354L29.527,24L14.382,3.177l3.235-2.354l16,22c0.51,0.702,0.51,1.651,0,2.354 L17.618,47.177z"></path></g></svg>
                 </a>
             </div>

@@ -34,7 +34,7 @@ class BuildPhotoStream
 
                 $tint = (new Tooleks\Php\AvgColorPicker\Gd\AvgColorPicker)->getImageAvgHexByPath($file->getRealPath());
 
-                $large = imagescale($image, 2048);
+                $large = imagescale($image, 1800);
                 imagejpeg($large, $largeFileName = sprintf('source/assets/photos/large/%s.jpg', $filename));
 
                 list($width, $height) = getimagesize($thumbnailFileName);
