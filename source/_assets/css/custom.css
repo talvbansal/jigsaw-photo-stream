@@ -9,3 +9,34 @@
 .main a:hover {
   @apply text-blue-700;
 }
+
+.photo-grid::after{
+  content: "";
+  display: block;
+  flex-grow: 10;
+  position: relative;
+}
+
+@responsive {
+  .vh-20{
+    height: 20vh;
+  }
+  .vh-40{
+    height: 40vh;
+  }
+  .vh-60{
+    height: 60vh;
+  }
+  .vh-80{
+    height: 80vh;
+  }
+
+}
+
+.open{
+  cursor: zoom-in;
+}
+
+.close{
+  cursor: zoom-out;
+}

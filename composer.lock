@@ -1,11 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "d6a0ee3b58d135c5f2a379056056ad98",
-    "content-hash": "6e32d9791de065a391176d6409d947bc",
+    "content-hash": "c0dc2d58d62fce6293a7d62cf7abb26d",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -72,7 +71,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2018-01-09 20:05:19"
+            "time": "2018-01-09T20:05:19+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -118,7 +117,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-03-17 18:48:37"
+            "time": "2019-03-17T18:48:37+00:00"
         },
         {
             "name": "erusev/parsedown-extra",
@@ -162,7 +161,7 @@
                 "parsedown",
                 "parser"
             ],
-            "time": "2015-11-01 10:19:22"
+            "time": "2015-11-01T10:19:22+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -210,7 +209,7 @@
             "keywords": [
                 "test"
             ],
-            "time": "2016-01-20 08:20:44"
+            "time": "2016-01-20T08:20:44+00:00"
         },
         {
             "name": "illuminate/container",
@@ -255,7 +254,7 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2019-04-22 13:12:35"
+            "time": "2019-04-22T13:12:35+00:00"
         },
         {
             "name": "illuminate/contracts",
@@ -299,7 +298,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2019-04-21 18:51:09"
+            "time": "2019-04-21T18:51:09+00:00"
         },
         {
             "name": "illuminate/events",
@@ -344,7 +343,7 @@
             ],
             "description": "The Illuminate Events package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-18 18:37:54"
+            "time": "2019-02-18T18:37:54+00:00"
         },
         {
             "name": "illuminate/filesystem",
@@ -396,7 +395,7 @@
             ],
             "description": "The Illuminate Filesystem package.",
             "homepage": "https://laravel.com",
-            "time": "2019-04-08 12:56:11"
+            "time": "2019-04-08T12:56:11+00:00"
         },
         {
             "name": "illuminate/support",
@@ -457,7 +456,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2019-04-25 14:06:24"
+            "time": "2019-04-25T14:06:24+00:00"
         },
         {
             "name": "illuminate/view",
@@ -506,7 +505,7 @@
             ],
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
-            "time": "2019-04-17 14:14:38"
+            "time": "2019-04-17T14:14:38+00:00"
         },
         {
             "name": "mnapoli/front-yaml",
@@ -541,7 +540,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2017-10-29 19:29:55"
+            "time": "2017-10-29T19:29:55+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -606,7 +605,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2019-02-13 09:37:52"
+            "time": "2019-02-13T09:37:52+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -666,7 +665,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-04-27 18:04:27"
+            "time": "2019-04-27T18:04:27+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -716,7 +715,7 @@
                 "php",
                 "type"
             ],
-            "time": "2015-07-25 16:39:46"
+            "time": "2015-07-25T16:39:46+00:00"
         },
         {
             "name": "psr/container",
@@ -765,7 +764,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14 16:28:37"
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/log",
@@ -812,7 +811,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2018-11-20 15:27:04"
+            "time": "2018-11-20T15:27:04+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -860,7 +859,7 @@
                 "psr-16",
                 "simple-cache"
             ],
-            "time": "2017-10-23 01:57:42"
+            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "symfony/console",
@@ -932,7 +931,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-08 14:23:48"
+            "time": "2019-04-08T14:23:48+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -1003,7 +1002,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-04-27 14:29:50"
+            "time": "2019-04-27T14:29:50+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1059,7 +1058,57 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-11 11:27:41"
+            "time": "2019-04-11T11:27:41+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v5.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "3afadc0f57cd74f86379d073e694b0f2cda2a88c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/3afadc0f57cd74f86379d073e694b0f2cda2a88c",
+                "reference": "3afadc0f57cd74f86379d073e694b0f2cda2a88c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2020-01-21T08:40:24+00:00"
         },
         {
             "name": "symfony/finder",
@@ -1108,7 +1157,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-06 13:51:08"
+            "time": "2019-04-06T13:51:08+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1166,7 +1215,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2019-02-06 07:57:58"
+            "time": "2019-02-06T07:57:58+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1225,7 +1274,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-02-06 07:57:58"
+            "time": "2019-02-06T07:57:58+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -1280,7 +1329,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-02-06 07:57:58"
+            "time": "2019-02-06T07:57:58+00:00"
         },
         {
             "name": "symfony/process",
@@ -1329,7 +1378,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-10 16:20:36"
+            "time": "2019-04-10T16:20:36+00:00"
         },
         {
             "name": "symfony/translation",
@@ -1404,7 +1453,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-01 12:55:36"
+            "time": "2019-05-01T12:55:36+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -1480,7 +1529,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-05-01 12:55:36"
+            "time": "2019-05-01T12:55:36+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1539,7 +1588,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2019-03-30 15:58:42"
+            "time": "2019-03-30T15:58:42+00:00"
         },
         {
             "name": "tightenco/jigsaw",
@@ -1604,7 +1653,59 @@
                 "site",
                 "static"
             ],
-            "time": "2019-02-26 18:47:44"
+            "time": "2019-02-26T18:47:44+00:00"
+        },
+        {
+            "name": "tooleks/php-avg-color-picker",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tooleks/php-avg-color-picker.git",
+                "reference": "64e2042def3f0450e04a812dd3dcd8e7236a7fd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tooleks/php-avg-color-picker/zipball/64e2042def3f0450e04a812dd3dcd8e7236a7fd8",
+                "reference": "64e2042def3f0450e04a812dd3dcd8e7236a7fd8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "ext-mbstring": "*",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tooleks\\Php\\AvgColorPicker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oleksandr Tolochko",
+                    "email": "tooleks@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The PHP Average Color Picker Library",
+            "homepage": "https://github.com/tooleks/php-avg-color-picker",
+            "keywords": [
+                "average",
+                "avg",
+                "color",
+                "hex",
+                "php",
+                "picker",
+                "rgb"
+            ],
+            "time": "2017-07-07T11:41:14+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1656,7 +1757,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2019-03-06 09:39:45"
+            "time": "2019-03-06T09:39:45+00:00"
         }
     ],
     "packages-dev": [],
@@ -1665,6 +1766,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-gd": "*"
+    },
     "platform-dev": []
 }

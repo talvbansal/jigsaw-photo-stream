@@ -1,10 +1,9 @@
 @extends('_layouts.master')
 
 @section('content')
-
-<main class="main">
-    <h1 class="font-light text-3xl text-black">Jigsaw + Tailwind CSS</h1>
-    <p class="text-gray-600 mt-4">A starter kit for using <a href="https://tailwindcss.com/">Tailwind CSS</a> with <a href="http://jigsaw.tighten.co/">Jigsaw</a></p>
-</main>
-
+    <div class="flex flex-wrap relative content-start">
+        @foreach($photos as $photo)
+            @include('_partials/photo', ['photo' => $photo])
+        @endforeach
+    </div>
 @endsection
