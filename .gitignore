@@ -15,3 +15,6 @@ yarn-error.log
 # /source/assets/css/
 # /source/assets/fonts/
 # /source/assets/js/
+
+# Local Netlify folder
+.netlify
