@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="flex flex-wrap relative content-start">
-        @foreach($photos as $photo)
-            @include('_partials/photo', ['photo' => $photo])
+        @foreach($photos->values() as $photo)
+            @include('_partials/photo', ['photos' => $photos->values(), 'photo' => $photo])
         @endforeach
     </div>
 @endsection

@@ -1,36 +1,25 @@
-.main {
-  @apply h-screen flex flex-col items-center justify-center bg-gray-300;
-}
-
-.main a {
-  @apply text-blue-500 no-underline;
-}
-
-.main a:hover {
-  @apply text-blue-700;
-}
-
-.photo-grid::after{
-  content: "";
-  display: block;
-  flex-grow: 10;
-  position: relative;
-}
-
 @responsive {
   .vh-20{
     height: 20vh;
   }
+  .vh-30{
+    height: 30vh;
+  }
   .vh-40{
     height: 40vh;
+  }
+  .vh-50{
+    height: 50vh;
   }
   .vh-60{
     height: 60vh;
   }
+  .vh-70{
+    height: 70vh;
+  }
   .vh-80{
     height: 80vh;
   }
-
 }
 
 .open{

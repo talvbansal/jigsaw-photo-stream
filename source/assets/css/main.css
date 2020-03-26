@@ -627,41 +627,28 @@ video {
   }
 }
 
-.main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #e2e8f0;
-}
-
-.main a {
-  color: #4299e1;
-  text-decoration: none;
-}
-
-.main a:hover {
-  color: #2b6cb0;
-}
-
-.photo-grid::after{
-  content: "";
-  display: block;
-  flex-grow: 10;
-  position: relative;
-}
-
 .vh-20{
   height: 20vh;
+}
+
+.vh-30{
+  height: 30vh;
 }
 
 .vh-40{
   height: 40vh;
 }
 
+.vh-50{
+  height: 50vh;
+}
+
 .vh-60{
   height: 60vh;
+}
+
+.vh-70{
+  height: 70vh;
 }
 
 .vh-80{
@@ -14038,12 +14025,24 @@ video {
     height: 20vh;
   }
 
+  .sm\:vh-30{
+    height: 30vh;
+  }
+
   .sm\:vh-40{
     height: 40vh;
   }
 
+  .sm\:vh-50{
+    height: 50vh;
+  }
+
   .sm\:vh-60{
     height: 60vh;
+  }
+
+  .sm\:vh-70{
+    height: 70vh;
   }
 
   .sm\:vh-80{
@@ -27413,12 +27412,24 @@ video {
     height: 20vh;
   }
 
+  .md\:vh-30{
+    height: 30vh;
+  }
+
   .md\:vh-40{
     height: 40vh;
   }
 
+  .md\:vh-50{
+    height: 50vh;
+  }
+
   .md\:vh-60{
     height: 60vh;
+  }
+
+  .md\:vh-70{
+    height: 70vh;
   }
 
   .md\:vh-80{
@@ -40788,12 +40799,24 @@ video {
     height: 20vh;
   }
 
+  .lg\:vh-30{
+    height: 30vh;
+  }
+
   .lg\:vh-40{
     height: 40vh;
   }
 
+  .lg\:vh-50{
+    height: 50vh;
+  }
+
   .lg\:vh-60{
     height: 60vh;
+  }
+
+  .lg\:vh-70{
+    height: 70vh;
   }
 
   .lg\:vh-80{
@@ -54163,12 +54186,24 @@ video {
     height: 20vh;
   }
 
+  .xl\:vh-30{
+    height: 30vh;
+  }
+
   .xl\:vh-40{
     height: 40vh;
   }
 
+  .xl\:vh-50{
+    height: 50vh;
+  }
+
   .xl\:vh-60{
     height: 60vh;
+  }
+
+  .xl\:vh-70{
+    height: 70vh;
   }
 
   .xl\:vh-80{

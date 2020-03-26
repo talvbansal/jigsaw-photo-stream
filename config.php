@@ -3,7 +3,7 @@
 return [
     'production' => false,
     'baseUrl' => '',
-    'siteTitle' => 'Jigsaw + Tailwind CSS Starter Kit',
+    'siteTitle' => 'Jigsaw Photo Stream',
     'collections' => [
         'photos' => [
             'sort' => '-date'

@@ -7,10 +7,10 @@
     <title>{{ $page->siteTitle }}</title>
 
     <link rel="stylesheet" href="{{ mix('/css/main.css') }}">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 </head>
 
 <body class="antialiased font-sans">
+<img src="/{{ $page->photo }}" />
 @yield('content')
 </body>
 </html>
