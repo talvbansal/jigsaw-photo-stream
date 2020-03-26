@@ -85,6 +85,10 @@ date: "%s"
     private function clearExistingFiles(string $path, string $fileType) : void
     {
         $filesystem = new Filesystem();
+        if(!$filesystem->exists($path)){
+            $filesystem->makeDirectory($path);
+        }
+
         $existingFiles = collect($filesystem->allFiles($path))->filter(function (SplFileInfo $file) use($fileType) {
             return Str::endsWith($fileType, $file->getExtension());
         })->map(function (SplFileInfo $file) {

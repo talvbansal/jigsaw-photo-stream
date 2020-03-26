@@ -3,3 +3,9 @@
 command = "npm run production"
 publish = "build_production"
 environment = { PHP_VERSION = "7.2" }
+
+[[redirects]]
+from = "/photos/*"
+to = "/"
+status = 200
+headers = {X-From = "Netlify"}
