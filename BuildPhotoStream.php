@@ -1,6 +1,7 @@
 <?php
 
 
+use Carbon\Carbon;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 use TightenCo\Jigsaw\Jigsaw;
@@ -38,7 +39,14 @@ class BuildPhotoStream
                 imagejpeg($large, $largeFileName = sprintf('source/assets/photos/large/%s.jpg', $filename));
 
                 list($width, $height) = getimagesize($thumbnailFileName);
-                $exif = exif_read_data($file->getRealPath(), 'FILE');
+
+                // Bad exif data will throw a warning but not an exception...
+                $exif = @exif_read_data($file->getRealPath(), 'FILE');
+                if(isset($exif['FileDateTime'])) {
+                    $exif = [
+                        'FileDateTime' => Carbon::today(),
+                    ];
+                }
 
                 $thumbnailFileName = str_replace('source/', '', $thumbnailFileName);
                 $largeFileName = str_replace('source/', '', $largeFileName);
@@ -66,7 +74,7 @@ date: "%s"
                     $name,
                     $height,
                     $width,
-                    \Carbon\Carbon::parse($exif['FileDateTime'])
+                    Carbon::parse($exif['FileDateTime'])
                 );
 
                 $jigsaw->writeSourceFile(sprintf('./_photos/%s.md', $filename), $contents);
