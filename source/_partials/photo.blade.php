@@ -1,5 +1,5 @@
 <div
-     class="open flex-grow relative border-2 vh-60 sm:vh-50 md:vh-40"
+     class="open flex-grow relative border-2 vh-60 sm:vh-40 md:vh-30"
      style="
 background-color: {{ $photo->tint }};
 width:'{{ $photo->width }}px';
