@@ -30,7 +30,6 @@ class BuildPhotoStream
                 $image = imagecreatefromjpeg($file->getRealPath());
 
                 // Resize images for efficiency...
-
                 $thumbnailSize = $jigsaw->getConfig('images.thumbnail.size');
                 $thumbnail = imagescale($image, $thumbnailSize);
                 imagejpeg($thumbnail, $thumbnailFileName = sprintf('source/assets/photos/thumbnail/%s.jpg', $filename), 80);
@@ -50,8 +49,6 @@ class BuildPhotoStream
                         'FileDateTime' => Carbon::today(),
                     ];
                 }
-
-
 
                 $thumbnailFileName = str_replace('source/', '', $thumbnailFileName);
                 $largeFileName = str_replace('source/', '', $largeFileName);

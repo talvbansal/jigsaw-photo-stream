@@ -9,6 +9,8 @@
         @foreach($photos->values() as $photo)
             @include('_partials/photo', ['photo' => $photo])
         @endforeach
+        {{-- https://css-tricks.com/adaptive-photo-layout-with-flexbox/ --}}
+        <div style="flex-grow: 10;"></div>
 
         @include('_partials/modal')
     </div>
