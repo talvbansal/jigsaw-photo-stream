@@ -63,6 +63,8 @@
                     document.title = photo.name;
                     document.querySelector('#og-url').content = photo.link;
                     document.querySelector('#og-image').content = photo.photo;
+                    document.querySelector('#tw-title').content = photo.name;
+                    document.querySelector('#tw-image').content = photo.photo;
 
                     window.history.pushState({}, '', photo.link);
 
@@ -77,6 +79,8 @@
                     document.title = '{{ $page->siteTitle }}';
                     document.querySelector('#og-url').content = '{{ $page->getUrl() }}';
                     document.querySelector('#og-image').content = '/{{ $photos->first()->photo }}';
+                    document.querySelector('#tw-title').content = '{{ $page->siteTitle }}';
+                    document.querySelector('#tw-image').content = '/{{ $photos->first()->photo }}';
                     if(this.href) {
                         window.history.pushState({}, '', '/');
                     }

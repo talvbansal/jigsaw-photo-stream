@@ -12,6 +12,16 @@
         <meta property="og:image" content="/{{ $photos->first()->photo }}" id="og-image">
         <meta property="og:site_name" content="{{ $page->siteTitle }}">
         <meta property="og:description" content="{{ $page->siteDescription }}">
+
+        @if($page->links->twitter)
+            <meta name="twitter:creator" content="{{ '@'.$page->links->twitter }}">
+        @endif
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="{{ $page->getUrl() }}">
+        <meta name="twitter:title" content="{{ $page->siteTitle }}" id="tw-title">
+        <meta name="twitter:description" content="{{ $page->siteDescription }}">
+        <meta name="twitter:image:src" content="/{{ $photos->first()->photo }}" id="tw-image">
+
         <meta name="description" content="{{ $page->siteDescription }}">
 
         <link rel="icon" type="image/png" href="/assets/favicon.png"/>
