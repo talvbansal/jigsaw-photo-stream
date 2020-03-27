@@ -45,11 +45,13 @@ class BuildPhotoStream
 
                 // Bad exif data will throw a warning but not an exception...
                 $exif = @exif_read_data($file->getRealPath(), 'FILE');
-                if(isset($exif['FileDateTime'])) {
+                if(!isset($exif['FileDateTime'])) {
                     $exif = [
                         'FileDateTime' => Carbon::today(),
                     ];
                 }
+
+
 
                 $thumbnailFileName = str_replace('source/', '', $thumbnailFileName);
                 $largeFileName = str_replace('source/', '', $largeFileName);
