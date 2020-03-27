@@ -22,6 +22,10 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .open{
   cursor: zoom-in;
 }

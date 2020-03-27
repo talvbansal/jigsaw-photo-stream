@@ -70,6 +70,11 @@
 
                     window.history.pushState({}, '', photo.link);
 
+                    @if($page->analytics->google)
+                        ga('set', 'page', photo.link)
+                        ga('send', 'pageview')
+                    @endif
+
                     if(!this.open) {
                         setTimeout(() => {
                             this.open = true

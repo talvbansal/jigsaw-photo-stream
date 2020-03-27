@@ -16,7 +16,10 @@ return [
         'instagram' => 'iwantthewindowseat',
         'github' => 'talvbansal',
         'redbubble' => 'talvbansal',
+    ],
 
+    'analytics' => [
+        'google' => '',
     ],
 
     'collections' => [

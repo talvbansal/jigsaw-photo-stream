@@ -26,6 +26,7 @@
 
         <link rel="icon" type="image/png" href="/assets/favicon.png"/>
         <link rel="stylesheet" href="{{ mix('/css/main.css') }}">
+
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
         <script async src="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@0.2.0/loading-attribute-polyfill.min.js" integrity="sha256-kX73NqVUoUbV0K44kgoqP8P8IZfU0OEjr/afCnK2Mrg=" crossorigin="anonymous"></script>
     </head>
@@ -34,4 +35,16 @@
         @yield('content')
         @include('./../_partials/social-links')
     </body>
+
+    @if($page->analytics->google)
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', '{{ $page->analytics->google }}', 'auto');
+            ga('send', 'pageview');
+        </script>
+    @endif
 </html>
