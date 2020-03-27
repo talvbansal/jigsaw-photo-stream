@@ -2,7 +2,7 @@
 
 A Photo Stream site written in Jigsaw, Tailwind and Alpine.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/573deda7-3b57-4e11-aab4-e2e87f9cddce/deploy-status)](https://app.netlify.com/sites/jigsaw-tailwindcss/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/af16ac0f-a55e-478f-af43-f210c06f5968/deploy-status)](https://app.netlify.com/sites/iwantthewindowseat/deploys)
 
 ## Features
 

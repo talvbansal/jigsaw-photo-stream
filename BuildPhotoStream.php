@@ -30,12 +30,15 @@ class BuildPhotoStream
                 $image = imagecreatefromjpeg($file->getRealPath());
 
                 // Resize images for efficiency...
-                $thumbnail = imagescale($image, 800);
-                imagejpeg($thumbnail, $thumbnailFileName = sprintf('source/assets/photos/thumbnail/%s.jpg', $filename), 65);
+
+                $thumbnailSize = $jigsaw->getConfig('images.thumbnail.size');
+                $thumbnail = imagescale($image, $thumbnailSize);
+                imagejpeg($thumbnail, $thumbnailFileName = sprintf('source/assets/photos/thumbnail/%s.jpg', $filename), 80);
 
                 $tint = (new Tooleks\Php\AvgColorPicker\Gd\AvgColorPicker)->getImageAvgHexByPath($file->getRealPath());
 
-                $large = imagescale($image, 1800);
+                $largeImageSize = $jigsaw->getConfig('images.large.size');
+                $large = imagescale($image, $largeImageSize);
                 imagejpeg($large, $largeFileName = sprintf('source/assets/photos/large/%s.jpg', $filename));
 
                 list($width, $height) = getimagesize($thumbnailFileName);

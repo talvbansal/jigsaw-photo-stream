@@ -2,6 +2,7 @@
 
 return [
     'production' => true,
-    'siteTitle' => '#iwantthewindowseat',
     'baseUrl' => 'https://iwantthewindowseat.netlify.com',
+    'siteTitle' => '#iwantthewindowseat',
+    'siteDescription' => 'A minimalistic photo stream.',
 ];
