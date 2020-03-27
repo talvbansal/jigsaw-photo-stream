@@ -1,4 +1,4 @@
-<ul class="fixed bottom-0 right-0 flex flex-col sm:flex-row flex-wrap ml-6 mb-6 mr-6 opacity-75">
+<ul class="fixed z-10 bottom-0 right-0 flex flex-col sm:flex-row flex-wrap ml-6 mb-6 mr-6 opacity-75">
     <li class="cursor-pointer text-xs mr-1 mb-1 rounded px-2 py-1 bg-gray-100 text-gray-800 uppercase hover:bg-white hover:text-gray-900"><a rel="me" href="https://github.com/talvbansal/photo-stream" title="Fork on Github">Fork Me on Github</a></li>
     @if($page->links->twitter)
         <li class="cursor-pointer text-xs mr-1 mb-1 rounded px-2 py-1 bg-gray-100 text-gray-800 uppercase hover:bg-white hover:text-gray-900"><a rel="me" href="https://twitter.com/{{ $page->links->twitter }}" title="{{ $page->links->twitter }} on Twitter">Twitter</a></li>
