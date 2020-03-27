@@ -23,6 +23,7 @@
                         'tint' => 'background-color: '.$photo->tint,
                         'link' => '/photos/'.$photo->filename,
                         'filename' => $photo->filename,
+                        'name' => $photo->name,
                         'next' => $photos->where('filename', '=', $photo->_meta->nextItem)->first()->id ?? null,
                         'previous' => $photos->where('filename', '=', $photo->_meta->previousItem)->first()->id ?? null,
                     ];
@@ -59,6 +60,10 @@
                     this.next = photo.next;
                     this.href = photo.link;
 
+                    document.title = photo.name;
+                    document.querySelector('#og-url').content = photo.link;
+                    document.querySelector('#og-image').content = photo.photo;
+
                     window.history.pushState({}, '', photo.link);
 
                     if(!this.open) {
@@ -69,6 +74,9 @@
                 },
                 close() {
                     this.open = false
+                    document.title = '{{ $page->siteTitle }}';
+                    document.querySelector('#og-url').content = '{{ $page->getUrl() }}';
+                    document.querySelector('#og-image').content = '/{{ $photos->first()->photo }}';
                     if(this.href) {
                         window.history.pushState({}, '', '/');
                     }

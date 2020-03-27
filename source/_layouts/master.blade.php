@@ -8,8 +8,8 @@
         <title>{{ $page->siteTitle }}</title>
         <meta property="og:title" content="{{ $page->siteTitle }}">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ $page->getUrl() }}">
-        <meta property="og:image" content="{{ $page->getUrl() }}">
+        <meta property="og:url" content="{{ $page->getUrl() }}" id="og-url">
+        <meta property="og:image" content="/{{ $photos->first()->photo }}" id="og-image">
         <meta property="og:site_name" content="{{ $page->siteTitle }}">
         <meta property="og:description" content="{{ $page->siteDescription }}">
         <meta name="description" content="{{ $page->siteDescription }}">
