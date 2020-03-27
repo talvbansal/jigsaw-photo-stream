@@ -6,7 +6,7 @@
          x-transition:leave="ease-in duration-200"
          x-transition:leave-start="opacity-100"
          x-transition:leave-end="opacity-0" class="fixed inset-0 transition-opacity">
-        <div class="absolute inset-0 opacity-75" :style="tint"></div>
+        <div class="absolute inset-0 opacity-75 transition ease-in-out duration-500" :style="tint"></div>
     </div>
 
     <!-- Modal Content -->
