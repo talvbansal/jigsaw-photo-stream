@@ -13,12 +13,11 @@ class BuildPhotoStream
         // Clear out existing photo markdown files...
         $this->clearExistingFiles('./source/_photos', '.md');
 
-        // Collect new photos...
+        // Clear out existing thumbnails and large processed images...
         $this->clearExistingFiles('./source/assets/photos/large', '.jpg');
         $this->clearExistingFiles('./source/assets/photos/thumbnail', '.jpg');
 
-        // Create resized images...
-        // Create new photo markdown files...
+        // Collect new photos...
         $filesystem = new Filesystem();
         $files = $filesystem->allFiles('./source/assets/photos/original');
 
@@ -26,37 +25,38 @@ class BuildPhotoStream
             return Str::endsWith($file, '.jpg');
         })->each(function(SplFileInfo $file, $index) use ($jigsaw) {
 
-                $filename = str_replace('--', '-', strtolower(str_replace('_', '-', $file->getBasename('.' . $file->getExtension()))));
-                $image = imagecreatefromjpeg($file->getRealPath());
+            $filename = str_replace('--', '-', strtolower(str_replace('_', '-', $file->getBasename('.' . $file->getExtension()))));
+            $image = imagecreatefromjpeg($file->getRealPath());
 
-                // Resize images for efficiency...
-                $thumbnailSize = $jigsaw->getConfig('images.thumbnail.size');
-                $thumbnail = imagescale($image, $thumbnailSize);
-                imagejpeg($thumbnail, $thumbnailFileName = sprintf('source/assets/photos/thumbnail/%s.jpg', $filename), 80);
+            // Work out average colour of images to create tint...
+            $tint = (new Tooleks\Php\AvgColorPicker\Gd\AvgColorPicker)->getImageAvgHexByPath($file->getRealPath());
 
-                $tint = (new Tooleks\Php\AvgColorPicker\Gd\AvgColorPicker)->getImageAvgHexByPath($file->getRealPath());
+            // Resize images for efficiency...
+            $thumbnailSize = $jigsaw->getConfig('images.thumbnail.size');
+            $thumbnail = imagescale($image, $thumbnailSize);
+            imagejpeg($thumbnail, $thumbnailFileName = sprintf('source/assets/photos/thumbnail/%s.jpg', $filename), 80);
 
-                $largeImageSize = $jigsaw->getConfig('images.large.size');
-                $large = imagescale($image, $largeImageSize);
-                imagejpeg($large, $largeFileName = sprintf('source/assets/photos/large/%s.jpg', $filename));
+            $largeImageSize = $jigsaw->getConfig('images.large.size');
+            $large = imagescale($image, $largeImageSize);
+            imagejpeg($large, $largeFileName = sprintf('source/assets/photos/large/%s.jpg', $filename));
 
-                list($width, $height) = getimagesize($thumbnailFileName);
+            list($width, $height) = getimagesize($thumbnailFileName);
 
-                // Bad exif data will throw a warning but not an exception...
-                $exif = @exif_read_data($file->getRealPath(), 'FILE');
-                if(!isset($exif['FileDateTime'])) {
-                    $exif = [
-                        'FileDateTime' => Carbon::today(),
-                    ];
-                }
+            // Bad exif data will throw a warning but not an exception...
+            $exif = @exif_read_data($file->getRealPath(), 'FILE');
+            if(!isset($exif['FileDateTime'])) {
+                $exif = [
+                    'FileDateTime' => Carbon::today(),
+                ];
+            }
 
-                $thumbnailFileName = str_replace('source/', '', $thumbnailFileName);
-                $largeFileName = str_replace('source/', '', $largeFileName);
+            $thumbnailFileName = str_replace('source/', '', $thumbnailFileName);
+            $largeFileName = str_replace('source/', '', $largeFileName);
 
-                $name = str_replace(['-'], ' ', $filename);
+            $name = str_replace(['-'], ' ', $filename);
 
-                // Create markdown file contents...
-                $contents = sprintf('---
+            // Create markdown file contents...
+            $contents = sprintf('---
 id: %s
 photo: "%s"
 thumbnail: "%s"
@@ -68,18 +68,18 @@ width: "%s"
 date: "%s"
 ---
 ',
-                    ($index +1),
-                    $largeFileName,
-                    $thumbnailFileName,
-                    $tint,
-                    $filename,
-                    $name,
-                    $height,
-                    $width,
-                    Carbon::parse($exif['FileDateTime'])
-                );
+                ($index +1),
+                $largeFileName,
+                $thumbnailFileName,
+                $tint,
+                $filename,
+                $name,
+                $height,
+                $width,
+                Carbon::parse($exif['FileDateTime'])
+            );
 
-                $jigsaw->writeSourceFile(sprintf('./_photos/%s.md', $filename), $contents);
+            $jigsaw->writeSourceFile(sprintf('./_photos/%s.md', $filename), $contents);
         });
 
     }
