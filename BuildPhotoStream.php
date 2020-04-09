@@ -44,9 +44,9 @@ class BuildPhotoStream
 
             // Bad exif data will throw a warning but not an exception...
             $exif = @exif_read_data($file->getRealPath(), 'FILE');
-            if(!isset($exif['FileDateTime'])) {
+            if(!isset($exif['DateTimeOriginal'])) {
                 $exif = [
-                    'FileDateTime' => Carbon::today(),
+                    'DateTimeOriginal' => $exif['FileDateTime'] ?? Carbon::today(),
                 ];
             }
 
@@ -76,7 +76,7 @@ date: "%s"
                 $name,
                 $height,
                 $width,
-                Carbon::parse($exif['FileDateTime'])
+                Carbon::parse($exif['DateTimeOriginal'])
             );
 
             $jigsaw->writeSourceFile(sprintf('./_photos/%s.md', $filename), $contents);
