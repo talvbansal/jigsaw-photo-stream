@@ -50,5 +50,5 @@ A Photo Stream site written in Jigsaw, Tailwind and Alpine.
 
 # Credits
 
-This project is heavily inspired and influenced by [Max Voltar's Photo Stream](https://github.com/maxvoltar/photo-stream])
+This project is heavily inspired and influenced by [Max Voltar's Photo Stream](https://github.com/maxvoltar/photo-stream)
 
